@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TEAM PHANTOM - Official Defence Academy</title>
+  <title>TEAM PHANTOM - Under Maintenance</title>
   
   <!-- Google Fonts: Rajdhani & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,9 +14,7 @@
     :root {
       --bg-dark: #070b14;
       --card-bg: #0f172a;
-      --card-hover: #131e36;
       --accent-gold: #f59e0b;
-      --accent-blue: #2563eb;
       --text-white: #f8fafc;
       --text-muted: #94a3b8;
       --border: #1e293b;
@@ -36,6 +34,9 @@
         radial-gradient(circle at 50% 0%, #172554 0%, transparent 60%),
         radial-gradient(circle at 10% 40%, rgba(30, 58, 138, 0.2) 0%, transparent 40%);
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       overflow-x: hidden;
     }
 
@@ -45,11 +46,8 @@
       border-bottom: 2px solid var(--border);
       padding: 14px 24px;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
       backdrop-filter: blur(10px);
     }
 
@@ -82,569 +80,110 @@
       color: var(--accent-gold);
     }
 
-    /* 3-BAR HAMBURGER BUTTON */
-    .menu-btn {
-      background: #1e293b;
+    /* MAINTENANCE CONSOLE */
+    .maintenance-container {
+      max-width: 480px;
+      margin: auto;
+      padding: 20px;
+      width: 100%;
+    }
+
+    .maintenance-card {
+      background: var(--card-bg);
       border: 1px solid var(--accent-gold);
-      color: var(--accent-gold);
-      width: 44px;
-      height: 44px;
-      border-radius: 8px;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 5px;
-      transition: all 0.2s ease;
-      position: relative !important;
-      z-index: 1000 !important;
-      pointer-events: auto !important;
-    }
-    .menu-btn:hover {
-      background: var(--accent-gold);
-    }
-    .menu-btn:hover .bar {
-      background: #000;
-    }
-    .bar {
-      width: 22px;
-      height: 2.5px;
-      background: var(--accent-gold);
-      border-radius: 2px;
-      transition: all 0.2s ease;
+      border-radius: 16px;
+      padding: 35px 25px;
+      text-align: center;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 25px rgba(245, 158, 11, 0.15);
     }
 
-    /* SIDEBAR OVERLAY & DRAWER */
-    .sidebar-overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; width: 100vw; height: 100vh;
-      background: rgba(0, 0, 0, 0.75);
-      z-index: 99998 !important;
-      backdrop-filter: blur(4px);
+    .maintenance-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
     }
 
-    .sidebar {
-      position: fixed !important;
-      top: 0 !important;
-      right: -400px !important;
-      width: 340px !important;
-      max-width: 85vw !important;
-      height: 100vh !important;
-      background: #0b1120 !important;
-      border-left: 2px solid var(--accent-gold);
-      z-index: 99999 !important;
-      transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-      display: flex;
-      flex-direction: column;
-      padding: 24px;
-      box-shadow: -15px 0 40px rgba(0, 0, 0, 0.9) !important;
-      overflow-y: auto;
-    }
-
-    .sidebar-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 16px;
-      margin-bottom: 22px;
-    }
-    .sidebar-title {
+    .maintenance-card h1 {
       font-family: 'Rajdhani', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--accent-gold);
+      font-size: 28px;
+      font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 1px;
-    }
-    .close-btn {
-      background: #1e293b;
-      border: 1px solid var(--border);
       color: #fff;
-      font-size: 20px;
-      width: 36px;
-      height: 36px;
-      border-radius: 6px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .close-btn:hover {
-      background: #dc2626;
-      border-color: #dc2626;
+      margin-bottom: 12px;
     }
 
-    .sidebar-box {
-      background: #0f172a;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 16px;
-      margin-bottom: 20px;
-    }
-    .sidebar-box h4 {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 16px;
-      color: var(--accent-gold);
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .sidebar-box p {
-      font-size: 13px;
-      color: #cbd5e1;
-      line-height: 1.5;
-      margin-bottom: 14px;
+    .maintenance-card p {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 25px;
     }
 
-    .admin-contact-btn {
+    .btn-whatsapp {
       display: block;
       width: 100%;
-      background: linear-gradient(1deg, #0284c7, #0369a1);
+      background: linear-gradient(135deg, #10b981, #059669);
       color: #fff;
       text-decoration: none;
-      padding: 11px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 13px;
       text-align: center;
-      transition: 0.2s;
+      padding: 13px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      font-family: 'Rajdhani', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
     }
-    .admin-contact-btn:hover {
-      background: linear-gradient(1deg, #0ea5e9, #0284c7);
+    .btn-whatsapp:hover {
+      background: linear-gradient(135deg, #34d399, #10b981);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+      transform: translateY(-2px);
     }
 
-    .disclaimer-text {
-      font-size: 12px;
-      color: #94a3b8;
-      line-height: 1.6;
-    }
-
-    .sidebar-footer {
-      margin-top: auto;
+    /* FOOTER */
+    .footer {
       text-align: center;
+      padding: 20px;
       font-size: 12px;
       color: #64748b;
       border-top: 1px solid var(--border);
-      padding-top: 16px;
-    }
-
-    /* HERO SECTION */
-    .hero {
-      text-align: center;
-      padding: 45px 16px 20px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .hero-tag {
+      background: rgba(7, 11, 20, 0.95);
       font-family: 'Rajdhani', sans-serif;
-      font-size: 14px;
-      color: var(--accent-gold);
-      letter-spacing: 3px;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-    .hero h1 {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 42px;
-      font-weight: 800;
-      line-height: 1.2;
-      text-transform: uppercase;
       letter-spacing: 1px;
-      margin-bottom: 12px;
-    }
-    .hero h1 span {
-      color: var(--accent-gold);
-      text-shadow: 0 0 25px rgba(245, 158, 11, 0.4);
-    }
-    .hero-subtitle {
-      font-size: 15px;
-      color: var(--text-muted);
-      font-style: italic;
-    }
-
-    /* MOTIVATION STRIP */
-    .quote-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 14px;
-      max-width: 1150px;
-      margin: 30px auto 40px;
-      padding: 0 16px;
-    }
-    .quote-card {
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--accent-gold);
-      padding: 14px 18px;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    }
-    .quote-card b {
-      color: var(--accent-gold);
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 14px;
-      display: block;
-      margin-bottom: 4px;
-      letter-spacing: 0.5px;
-    }
-    .quote-card span {
-      font-size: 13px;
-      color: #cbd5e1;
-      line-height: 1.4;
-    }
-
-    /* BATCH SECTION */
-    .container {
-      max-width: 1150px;
-      margin: 0 auto 70px;
-      padding: 0 16px;
-    }
-    .section-title {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 28px;
-      font-weight: 800;
-      text-align: center;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 28px;
-    }
-    .section-title span {
-      color: var(--accent-gold);
-    }
-
-    .batch-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-    }
-
-    .batch-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-      position: relative;
-    }
-    .batch-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--accent-gold);
-      background: var(--card-hover);
-      box-shadow: 0 12px 30px rgba(245, 158, 11, 0.15);
-    }
-
-    .batch-top {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 16px;
-    }
-    .batch-logo {
-      width: 52px;
-      height: 52px;
-      border-radius: 10px;
-      object-fit: cover;
-      background: #1e293b;
-      border: 1.5px solid var(--accent-gold);
-      flex-shrink: 0;
-    }
-    .batch-meta h3 {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 20px;
-      font-weight: 700;
-      color: #fff;
-    }
-    .batch-badge {
-      font-size: 11px;
-      color: var(--accent-gold);
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-
-    .batch-desc {
-      font-size: 13.5px;
-      color: var(--text-muted);
-      line-height: 1.5;
-      margin-bottom: 20px;
-    }
-
-    .price-row {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      margin-bottom: 16px;
-    }
-    .price {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 28px;
-      font-weight: 800;
-      color: #22c55e;
-    }
-    .cut-price {
-      font-size: 14px;
-      color: #64748b;
-      text-decoration: line-through;
-    }
-
-    .btn-subscribe {
-      display: block;
-      width: 100%;
-      background: linear-gradient(1deg, #f59e0b, #d97706);
-      color: #000;
-      text-decoration: none;
-      text-align: center;
-      padding: 12px;
-      border-radius: 8px;
-      font-weight: 800;
-      font-size: 14px;
-      font-family: 'Rajdhani', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
-    }
-    .btn-subscribe:hover {
-      background: linear-gradient(1deg, #fbbf24, #f59e0b);
-      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
-      transform: scale(1.02);
-    }
-
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 32px; }
-      .brand-text { font-size: 22px; }
     }
   </style>
 </head>
 <body>
- <!-- NAVBAR -->
+
+  <!-- NAVBAR -->
   <header class="navbar">
     <div class="brand-wrap">
       <img src="logo.jpeg" alt="Team Phantom Logo" class="main-logo" onerror="this.src='https://via.placeholder.com/50/f59e0b/000000?text=TP'" />
       <div class="brand-text">Team <span>Phantom</span></div>
     </div>
-    
-    <!-- 3-Line Hamburger Menu Button -->
-    <button class="menu-btn" onclick="openMenu()" aria-label="Open Navigation Menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
   </header>
 
-  <!-- SIDEBAR OVERLAY & DRAWER -->
-  <div id="sidebarOverlay" class="sidebar-overlay" onclick="closeMenu()"></div>
-  <aside id="sidebarDrawer" class="sidebar">
-    <div class="sidebar-top">
-      <div class="sidebar-title">Menu & Control</div>
-      <button class="close-btn" onclick="closeMenu()" aria-label="Close Menu">&times;</button>
-    </div>
-
-    <!-- 1. ADMIN PANEL -->
-    <div class="sidebar-box">
-      <h4>🛡️ Admin Support Desk</h4>
-      <p>For batch enrollment verification, manual approval, or technical assistance, reach out directly to the administrator:</p>
-      <a href="https://t.me/teamPhantom98" target="_blank" class="admin-contact-btn">
-        Contact Admin on Telegram
+  <!-- MAINTENANCE SECTION -->
+  <main class="maintenance-container">
+    <div class="maintenance-card">
+      <div class="maintenance-icon">🛠️</div>
+      <h1>System Maintenance</h1>
+      <p>
+        Website maintenance ke liye band hai. Jaise hi website chalu hogi, aapko official WhatsApp channel par update mil jayega.
+      </p>
+      <a href="https://whatsapp.com/channel/0029VbCKwhBIXnlwyy2xyb3a" target="_blank" class="btn-whatsapp">
+        Click Here to Join WhatsApp Channel
       </a>
-    </div>
-
-    <!-- 2. CONTENT TAKEDOWN & COPYRIGHT -->
-    <div class="sidebar-box">
-      <h4>⚖️ Content Takedown & Copyright</h4>
-      <div class="disclaimer-text">
-        All educational resources and materials on this portal are curated strictly for academic mentorship and defense exam preparation.<br><br>
-        If any organization, copyright holder, or publisher finds any material that infringes upon intellectual property rights, please contact the administrator via the support button above. The requested content will be reviewed and removed promptly.<br><br>
-        <b>Copyright © 2026 Team Phantom.</b> All rights reserved.
-      </div>
-    </div>
-
-    <div class="sidebar-footer">
-      TEAM PHANTOM &bull; Discipline &bull; Victory
-    </div>
-  </aside>
-
-  <!-- MOTIVATIONAL HERO -->
-  <section class="hero">
-    <div class="hero-tag">VALOUR &bull; COMMITMENT &bull; VICTORY</div>
-    <h1>DISCIPLINE LEADS TO <span>ACADEMY GATES</span></h1>
-    <p class="hero-subtitle">"The more you sweat in peace, the less you bleed in war."</p>
-  </section>
-
-  <!-- MOTIVATIONAL QUOTES STRIP -->
-  <section class="quote-grid">
-    <div class="quote-card">
-      <b>OFFICERS CODE</b>
-      <span>"Two stars on the shoulder are better than millions in the sky."</span>
-    </div>
-    <div class="quote-card">
-      <b>WARRIOR SPIRIT</b>
-      <span>"Either I will come back after hoisting the Tricolour, or I will come back wrapped in it."</span>
-    </div>
-    <div class="quote-card">
-      <b>DAILY MISSION</b>
-      <span>"Consistent practice beats raw talent when talent fails to practice."</span>
-    </div>
-  </section>
-
-  <!-- BATCHES SECTION -->
-  <main class="container">
-    <h2 class="section-title">CHOOSE YOUR <span>TARGET BATCH</span></h2>
-
-    <div class="batch-grid">
-      <!-- 1. CDS Maths - ₹60 -->
-      <div class="batch-card">
-        <div>
-          <div class="batch-top">
-            <img src="math.jpeg" alt="CDS Math Logo" class="batch-logo" onerror="this.src='https://via.placeholder.com/50/2563eb/ffffff?text=MATH'" />
-            <div class="batch-meta">
-              <span class="batch-badge">Specialist Mentorship</span>
-              <h3>CDS Mathematics</h3>
-            </div>
-          </div>
-          <p class="batch-desc">Comprehensive Advance & Arithmetic Maths curriculum with shortcuts, formulas, and PYQ practice.</p>
-        </div>
-        <div>
-          <div class="price-row">
-            <span class="price">₹60</span>
-            <span class="cut-price">₹1599</span>
-          </div>
-          <a href="payment.html?batch=cds-math" class="btn-subscribe">Subscribe Now</a>
-        </div>
-      </div>
-
-      <!-- 2. CDS OTA - ₹120 -->
-      <div class="batch-card">
-        <div>
-          <div class="batch-top">
-            <img src="ota.jpeg" alt="CDS OTA Logo" class="batch-logo" onerror="this.src='https://via.placeholder.com/50/f59e0b/000000?text=OTA'" />
-            <div class="batch-meta">
-              <span class="batch-badge">Officers Training</span>
-              <h3>CDS OTA Batch</h3>
-            </div>
-          </div>
-          <p class="batch-desc">Focused English Grammar, Reading Comprehension & structured General Studies modules.</p>
-        </div>
-        <div>
-          <div class="price-row">
-            <span class="price">₹120</span>
-            <span class="cut-price">₹4199</span>
-          </div>
-          <a href="payment.html?batch=cds-ota" class="btn-subscribe">Subscribe Now</a>
-        </div>
-      </div>
-
-      <!-- 3. AFCAT - ₹110 -->
-      <div class="batch-card">
-        <div>
-          <div class="batch-top">
-            <img src="afcat.jpeg" alt="AFCAT Logo" class="batch-logo" onerror="this.src='https://via.placeholder.com/50/0284c7/ffffff?text=AFCAT'" />
-            <div class="batch-meta">
-              <span class="batch-badge">Air Force Special</span>
-              <h3>AFCAT Complete</h3>
-            </div>
-          </div>
-          <p class="batch-desc">Master Reasoning, Numerical Ability, Verbal Ability, and Defence Static GK with precision sets.</p>
-        </div>
-        <div>
-          <div class="price-row">
-            <span class="price">₹110</span>
-            <span class="cut-price">₹699</span>
-          </div>
-          <a href="payment.html?batch=afcat" class="btn-subscribe">Subscribe Now</a>
-        </div>
-      </div>
-
-      <!-- 4. CAPF - ₹110 -->
-      <div class="batch-card">
-        <div>
-          <div class="batch-top">
-            <img src="capf.jpeg" alt="CAPF Logo" class="batch-logo" onerror="this.src='https://via.placeholder.com/50/16a34a/ffffff?text=CAPF'" />
-            <div class="batch-meta">
-              <span class="batch-badge">Assistant Commandant</span>
-              <h3>CAPF AC Master</h3>
-            </div>
-          </div>
-          <p class="batch-desc">Paper 1 General Studies + Descriptive Essay, Précis & Argument/Report Writing mentorship (Paper 2).</p>
-        </div>
-        <div>
-          <div class="price-row">
-            <span class="price">₹110</span>
-            <span class="cut-price">₹7999</span>
-          </div>
-          <a href="payment.html?batch=capf" class="btn-subscribe">Subscribe Now</a>
-        </div>
-      </div>
-
-      <!-- 5. ALL-IN-ONE DEFENSE COMBO - ₹360 -->
-      <div class="batch-card" style="border: 2px solid var(--accent-gold); background: linear-gradient(180deg, rgba(245, 158, 11, 0.07) 0%, var(--card-bg) 100%);">
-        <div style="position: absolute; top: -11px; right: 18px; background: var(--accent-gold); color: #000; font-weight: 800; font-size: 10.5px; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px;">
-          Best Value Deal 🔥
-        </div>
-        <div>
-          <div class="batch-top">
-            <img src="combo.jpeg" alt="Defense Combo Logo" class="batch-logo" onerror="this.src='https://via.placeholder.com/50/f59e0b/000000?text=COMBO'" />
-            <div class="batch-meta">
-              <span class="batch-badge">All-In-One Access</span>
-              <h3>Defense Mega Combo</h3>
-            </div>
-          </div>
-          <p class="batch-desc">
-            Complete Mentorship Package: <b>CDS (Maths + OTA)</b>, <b>AFCAT Complete</b>, and <b>CAPF AC (Paper 1 & 2)</b>. Full syllabus coverage with practice sheets.
-          </p>
-        </div>
-        <div>
-          <div class="price-row">
-            <span class="price">₹360</span>
-            <span class="cut-price">₹12999</span>
-          </div>
-          <a href="payment.html?batch=defense-combo" class="btn-subscribe" style="background: linear-gradient(135deg, #f59e0b, #eab308);">
-            Subscribe Combo 🚀
-          </a>
-        </div>
-      </div>
-
     </div>
   </main>
 
-  <!-- JAVASCRIPT -->
-  <script>
-    function openMenu() {
-      const drawer = document.getElementById("sidebarDrawer");
-      const overlay = document.getElementById("sidebarOverlay");
-      if (drawer) {
-        drawer.style.setProperty("right", "0px", "important");
-      }
-      if (overlay) {
-        overlay.style.setProperty("display", "block", "important");
-      }
-    }
+  <!-- FOOTER -->
+  <footer class="footer">
+    TEAM PHANTOM &bull; DISCIPLINE &bull; VICTORY &bull; &copy; 2026
+  </footer>
 
-    function closeMenu() {
-      const drawer = document.getElementById("sidebarDrawer");
-      const overlay = document.getElementById("sidebarOverlay");
-      if (drawer) {
-        drawer.style.setProperty("right", "-400px", "important");
-      }
-      if (overlay) {
-        overlay.style.setProperty("display", "none", "important");
-      }
-    }
-
-    function goToPayment(batchName) {
-      window.location.href = "payment.html?batch=" + batchName;
-    }
-  </script>
 </body>
 </html>
